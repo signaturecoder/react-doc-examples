@@ -1,0 +1,1 @@
+{"mappings":"AAAA,QAAQ,GAAG,CAAC;AAEZ,MAAM,OAAO,SAAS,cAAc,CAAC","sources":["App.js"],"sourcesContent":["console.log(\"Sanu\");\n\nconst root = document.getElementById('root')"],"names":[],"version":3,"file":"index.6bd02f5a.js.map","sourceRoot":"/__parcel_source_root/"}

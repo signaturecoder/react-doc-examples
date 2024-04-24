@@ -1,0 +1,98 @@
+.App {
+  background-color: #ccc;
+  margin: 0 auto;
+}
+
+.square {
+  float: left;
+  border: 1px solid #999;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  font-size: 24px;
+}
+
+.board-row {
+  display: table;
+}
+
+.game {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.box-dark {
+  color: #fff;
+  background-color: #000;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  display: flex;
+}
+
+.box-light {
+  color: #000;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  display: flex;
+}
+
+.form-field {
+  margin: .5rem;
+}
+
+.panel {
+  background-color: orange;
+  border: 1px solid #000;
+  width: 350px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.panel-dark {
+  color: #fff;
+  background-color: #000;
+}
+
+.panel-light {
+  color: #000;
+  background-color: #fff;
+}
+
+.panel-light > h3 {
+  color: #000;
+}
+
+.panel-dark > h3 {
+  color: #fff;
+}
+
+.button {
+  color: #00f;
+  cursor: pointer;
+  background-color: #ff0;
+  width: 45%;
+  margin-top: .5rem;
+  margin-right: .5rem;
+  padding: 10px;
+}
+
+.button-dark {
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #fff;
+}
+
+.button-light {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+/*# sourceMappingURL=index.9e4c6fd2.css.map */
