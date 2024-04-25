@@ -5,6 +5,7 @@ import "./index.css";
 import Button from "./src/components/UnderstandingContext/Button";
 import MyProviders from "./src/components/UnderstandingContext/MyProviders";
 import WelcomePanel from "./src/components/UnderstandingContext/WelcomePanel";
+import Home from "./src/components/hooks/home";
 // import { FilterableSearchTable }  from "./src/components/FilterSearchTable/filterableSearchTable";
 
 // const PRODUCTS = [
@@ -33,13 +34,14 @@ const App = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  console.log("Pushing my code");
   return (
     <>
-      <MyProviders theme={theme}>
+      {/* <MyProviders theme={theme}>
         <WelcomePanel />
-      </MyProviders>
-      <Button onBtnClick={handleToggleTheme}>Toggle theme</Button>
+      </MyProviders> */}
+      <Home />
+
+      {/* <Button onBtnClick={handleToggleTheme}>Toggle theme</Button> */}
     </>
   );
 };
