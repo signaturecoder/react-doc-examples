@@ -95,4 +95,39 @@
   border: 1px solid #000;
 }
 
+.hHEx-a_App {
+  background-color: #e6e6e6;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.hHEx-a_input-search-box {
+  font-size: 2rem;
+}
+
+#hHEx-a_input-search {
+  width: 20vw;
+  height: 5vh;
+  margin-top: 1rem;
+}
+
+.hHEx-a_list-container {
+  width: 20vw;
+  padding-left: 0;
+  list-style: none;
+}
+
+.hHEx-a_list-item {
+  border-bottom: 1px solid green;
+  padding: .2rem;
+}
+
+.hHEx-a_list-item:last-child {
+  border: none;
+}
+
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

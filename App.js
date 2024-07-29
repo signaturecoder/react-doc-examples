@@ -6,6 +6,7 @@ import Button from "./src/components/UnderstandingContext/Button";
 import MyProviders from "./src/components/UnderstandingContext/MyProviders";
 import WelcomePanel from "./src/components/UnderstandingContext/WelcomePanel";
 import Home from "./src/components/hooks/home";
+import AutoSuggestion from "./src/components/AutoSuggestion/AutoSuggestion";
 // import { FilterableSearchTable }  from "./src/components/FilterSearchTable/filterableSearchTable";
 
 // const PRODUCTS = [
@@ -40,7 +41,7 @@ const App = () => {
         <WelcomePanel />
       </MyProviders> */}
       <Home />
-
+      <AutoSuggestion />
       {/* <Button onBtnClick={handleToggleTheme}>Toggle theme</Button> */}
     </>
   );

@@ -2962,6 +2962,8 @@ var _welcomePanel = require("./src/components/UnderstandingContext/WelcomePanel"
 var _welcomePanelDefault = parcelHelpers.interopDefault(_welcomePanel);
 var _home = require("./src/components/hooks/home");
 var _homeDefault = parcelHelpers.interopDefault(_home);
+var _autoSuggestion = require("./src/components/AutoSuggestion/AutoSuggestion");
+var _autoSuggestionDefault = parcelHelpers.interopDefault(_autoSuggestion);
 var _s = $RefreshSig$();
 const ThemeContext = /*#__PURE__*/ (0, _react.createContext)("light");
 const CurrentUserContext = /*#__PURE__*/ (0, _react.createContext)(null);
@@ -2972,19 +2974,26 @@ const App = ()=>{
         setTheme(theme === "dark" ? "light" : "dark");
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homeDefault.default), {}, void 0, false, {
-            fileName: "App.js",
-            lineNumber: 42,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false);
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homeDefault.default), {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 43,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _autoSuggestionDefault.default), {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 44,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
 };
 _s(App, "MOCvl6iGOxSkmATsuDSc6CWgskg=");
 _c = App;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 51,
+    lineNumber: 52,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -2995,7 +3004,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/components/UnderstandingContext/Form":"kcOfw","./index.css":"giGSC","./src/components/UnderstandingContext/Button":"8t7kv","./src/components/UnderstandingContext/MyProviders":"4h9Gi","./src/components/UnderstandingContext/WelcomePanel":"54qrf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./src/components/hooks/home":"7pShS"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./src/components/UnderstandingContext/Form":"kcOfw","./index.css":"giGSC","./src/components/UnderstandingContext/Button":"8t7kv","./src/components/UnderstandingContext/MyProviders":"4h9Gi","./src/components/UnderstandingContext/WelcomePanel":"54qrf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./src/components/hooks/home":"7pShS","./src/components/AutoSuggestion/AutoSuggestion":"5NFUm"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27914,6 +27923,153 @@ $RefreshReg$(_c1, "%default%");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["j2WyO","1xC6H","2Ew96"], "2Ew96", "parcelRequire1ecf")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5NFUm":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$fb4f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$fb4f.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _fruitData = require("../../constants/fruitData");
+var _debounce = require("../../util/debounce");
+var _autoSuggestionModuleCss = require("./AutoSuggestion.module.css");
+var _s = $RefreshSig$();
+const AutoSuggestion = ()=>{
+    _s();
+    const [searchInput, setSearchInput] = (0, _react.useState)("");
+    const [fruits, setFruits] = (0, _react.useState)([]);
+    const [filterItem, setFilterItem] = (0, _react.useState)([]);
+    const fetchData = ()=>{
+        return new Promise((resolve, reject)=>{
+            resolve((0, _fruitData.fruitData));
+        });
+    };
+    (0, _react.useEffect)(()=>{
+        fetchData().then((data)=>setFruits(data));
+    }, []);
+    const renderItem = filterItem.map((item, i)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+            className: "list-item",
+            onClick: (e)=>setSearchInput(e.target.innerText),
+            children: item.fn
+        }, i, false, {
+            fileName: "src/components/AutoSuggestion/AutoSuggestion.jsx",
+            lineNumber: 23,
+            columnNumber: 5
+        }, undefined));
+    const handleChange = (val)=>{
+        setSearchInput(val);
+        if (val && fruits) {
+            let filteredList = fruits.filter((item)=>item.fn.includes(val));
+            setFilterItem(filteredList);
+        } else setFilterItem([]);
+    };
+    const optimisedFn = (0, _debounce.debounce)(handleChange, 3000);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "App",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Auto Suggestion"
+            }, void 0, false, {
+                fileName: "src/components/AutoSuggestion/AutoSuggestion.jsx",
+                lineNumber: 46,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                htmlFor: "search-box",
+                className: "input-search-box",
+                children: "Search Fruits"
+            }, void 0, false, {
+                fileName: "src/components/AutoSuggestion/AutoSuggestion.jsx",
+                lineNumber: 47,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                id: "search-box",
+                type: "text",
+                value: searchInput,
+                onChange: (e)=>optimisedFn(e.target.value),
+                placeholder: "search fruit name"
+            }, void 0, false, {
+                fileName: "src/components/AutoSuggestion/AutoSuggestion.jsx",
+                lineNumber: 48,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                className: "list-container",
+                children: renderItem.length > 0 ? renderItem : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                    children: "No Result"
+                }, void 0, false, {
+                    fileName: "src/components/AutoSuggestion/AutoSuggestion.jsx",
+                    lineNumber: 56,
+                    columnNumber: 47
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/AutoSuggestion/AutoSuggestion.jsx",
+                lineNumber: 55,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/AutoSuggestion/AutoSuggestion.jsx",
+        lineNumber: 45,
+        columnNumber: 5
+    }, undefined);
+};
+_s(AutoSuggestion, "5mAcn48iZ+POaVbdmhBaQ7Pfoqg=");
+_c = AutoSuggestion;
+exports.default = AutoSuggestion;
+var _c;
+$RefreshReg$(_c, "AutoSuggestion");
+
+  $parcel$ReactRefreshHelpers$fb4f.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./AutoSuggestion.module.css":"52wWR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../util/debounce":"5vlaZ","../../constants/fruitData":"3Ld1e"}],"52wWR":[function(require,module,exports) {
+module.exports["App"] = `hHEx-a_App`;
+module.exports["input-search"] = `hHEx-a_input-search`;
+module.exports["input-search-box"] = `hHEx-a_input-search-box`;
+module.exports["list-container"] = `hHEx-a_list-container`;
+module.exports["list-item"] = `hHEx-a_list-item`;
+
+},{}],"5vlaZ":[function(require,module,exports) {
+// call, bind ,apply
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "debounce", ()=>debounce);
+const debounce = (fn, delay = 3000)=>{
+    let intervalID;
+    return (...args)=>{
+        clearInterval(intervalID);
+        intervalID = setTimeout(()=>fn.apply(undefined, args), delay);
+    };
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3Ld1e":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "fruitData", ()=>fruitData);
+const fruitData = [
+    {
+        fn: "apple"
+    },
+    {
+        fn: "mango"
+    },
+    {
+        fn: "guava"
+    },
+    {
+        fn: "banana"
+    }
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["j2WyO","1xC6H","2Ew96"], "2Ew96", "parcelRequire1ecf")
 
 //# sourceMappingURL=index.7826abd7.js.map
