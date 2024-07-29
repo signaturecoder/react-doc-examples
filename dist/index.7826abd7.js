@@ -28070,6 +28070,6 @@ const fruitData = [
     }
 ];
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["j2WyO","1xC6H","2Ew96"], "2Ew96", "parcelRequire1ecf")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["j2WyO","1xC6H","2Ew96"], "2Ew96", "parcelRequire50da")
 
 //# sourceMappingURL=index.7826abd7.js.map

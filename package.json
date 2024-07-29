@@ -1,10 +1,11 @@
 {
-  "name": "tic-tac-toe",
+  "name": "react-doc-examples",
   "version": "1.0.0",
   "description": "",
   "main": "App.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel index.html"
   },
   "author": "sanu kumar",
   "license": "ISC",
